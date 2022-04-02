@@ -24,7 +24,7 @@ class PledgersController < ApplicationController
   # POST /pledgers or /pledgers.json
   def create
     @pledger = Pledger.new(pledger_params)
-    client = Vonage::Client.new(api_key: 'f90a7cbc', api_secret: 'yO3exNXcN03VzlBO')
+    client = Vonage::Client.new(api_key: ENV['api_key_vonage'], api_secret: ENV['api_secret_vonage'])
     respond_to do |format|
       if @pledger.save
         client.sms.send(
