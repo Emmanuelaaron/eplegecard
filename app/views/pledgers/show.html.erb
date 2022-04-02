@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @pledger.name %>
+</p>
+
+<p>
+  <strong>Phonenumber:</strong>
+  <%= @pledger.phonenumber %>
+</p>
+
+<p>
+  <strong>Amount:</strong>
+  <%= @pledger.amount %>
+</p>
+
+<p>
+  <strong>Expecteddate:</strong>
+  <%= @pledger.expecteddate %>
+</p>
+
+<p>
+  <strong>Fullfilled:</strong>
+  <%= @pledger.fullfilled %>
+</p>
+
+<%= link_to 'Edit', edit_pledger_path(@pledger) %> |
+<%= link_to 'Back', pledgers_path %>

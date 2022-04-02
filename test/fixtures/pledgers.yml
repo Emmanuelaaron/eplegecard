@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  phonenumber: MyString
+  amount: 1
+  expecteddate: 2022-04-01
+  fullfilled: false
+
+two:
+  name: MyString
+  phonenumber: MyString
+  amount: 1
+  expecteddate: 2022-04-01
+  fullfilled: false
