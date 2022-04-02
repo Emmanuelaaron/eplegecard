@@ -1,1 +1,1 @@
-json.array! @pledgers, partial: "pledgers/pledger", as: :pledger
+json.array! @pledgers, partial: 'pledgers/pledger', as: :pledger

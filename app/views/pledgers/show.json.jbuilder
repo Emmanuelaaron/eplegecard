@@ -1,1 +1,1 @@
-json.partial! "pledgers/pledger", pledger: @pledger
+json.partial! 'pledgers/pledger', pledger: @pledger
