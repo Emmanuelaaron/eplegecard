@@ -10,33 +10,27 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+  <div>
+  <div class="form-row align-items-center">
+  <div class="field col-sm-3 my-1">
+    <%= form.text_field :name, placeholder: 'Name'%>
   </div>
 
-  <div class="field">
-    <%= form.label :phonenumber %>
-    <%= form.text_field :phonenumber %>
+  <div class="field col-sm-3 my-1">
+    <%= form.text_field :phonenumber, placeholder: 'Phonecontact' %>
   </div>
 
-  <div class="field">
-    <%= form.label :amount %>
-    <%= form.number_field :amount %>
+  <div class="field col-sm-3 my-1">
+    <%= form.number_field :amount, placeholder: 'Amount' %>
   </div>
 
-  <div class="field">
+  <div class="field col-sm-">
     <%= form.label :expecteddate %>
     <%= form.date_select :expecteddate %>
   </div>
 
-  <div class="field">
-    <%= form.label :fullfilled %>
-    <%= form.check_box :fullfilled %>
+  <div class="actions col-sm-3 my-1">
+    <%= form.submit 'Pledge' %>
   </div>
-
-  <div class="actions">
-    <%= form.submit %>
   </div>
 <% end %>

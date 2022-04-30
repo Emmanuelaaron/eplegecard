@@ -1,4 +1,3 @@
-require 'vonage'
 class PledgersController < ApplicationController
   before_action :set_pledger, only: %i[show edit update destroy]
 
@@ -21,14 +20,8 @@ class PledgersController < ApplicationController
   # POST /pledgers or /pledgers.json
   def create
     @pledger = Pledger.new(pledger_params)
-    client = Vonage::Client.new(api_key: ENV['api_key_vonage'], api_secret: ENV['api_secret_vonage'])
     respond_to do |format|
       if @pledger.save
-        client.sms.send(
-          from: 'Vonage APIs',
-          to: pledger_params['phonenumber'],
-          text: 'Hello Buddy sasula Sente ze embaga'
-        )
         format.html { redirect_to pledger_url(@pledger), notice: 'Pledger was successfully created.' }
         format.json { render :show, status: :created, location: @pledger }
       else

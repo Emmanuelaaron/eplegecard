@@ -1,0 +1,70 @@
+
+
+ // Custom bootstrap variables must be set or imported *before* bootstrap.
+@import "bootstrap";
+body {
+	background: linear-gradient(
+		rgba(255, 0, 0, 0.45), 
+		rgba(155, 184, 223, 0.45)
+	  );
+}
+
+.banner-container {
+	background:  linear-gradient(
+		rgba(255, 0, 0, 0.45), 
+		rgba(155, 184, 223, 0.45)
+	  ), url(asset_path('joel.JPG'));
+	box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+	border-radius: 4%;
+	min-height: 775px;
+	float:left;
+	background-size: cover;
+	// display: inline-block;
+	// font-size: 14px;
+	// height: 100%;
+	// overflow: hidden;
+	// position: fixed;
+	// text-shadow: 1px 1px rgba(0,0,0,0.3);
+	width: 50%;
+	/* position: relative; */
+} 
+
+#home .heading h2 {
+	color: #ffffff;
+	font-size: 60px !important;
+	font-weight: normal !important;
+	text-transform: capitalize;
+	margin-top: 50px;
+	/* background: #E91E63; */
+	padding: 15px;
+	font-weight: 700 !important;
+}
+#home .heading h3 {
+	color: #ffffff;
+	font-size: 28px !important;
+	font-weight: 700 !important;
+	text-shadow: -1px -1px 5px rgba(0, 0, 0, 0.33);
+}
+#home .heading strong {
+	color: #fff;
+	font-size: 30px;
+	font-weight: normal;
+}
+
+
+@media (max-width: 760px) {
+    .banner-container {
+        width:100%;
+    }
+    
+.banner-container {
+	position: relative;
+}
+
+}
+
+@media (max-width: 480) {
+    .banner-container {
+        max-width: 500px;
+    }
+}
