@@ -1,36 +1,35 @@
 <%= form_with(model: pledger) do |form| %>
   <% if pledger.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(pledger.errors.count, "error") %> prohibited this pledger from being saved:</h2>
-
-      <ul>
+      <ul class="text-danger">
         <% pledger.errors.each do |error| %>
           <li><%= error.full_message %></li>
         <% end %>
       </ul>
     </div>
   <% end %>
+  <h4 class="text-light">Please Add your Pledge details here</h4>
   <div>
-  <div class="form-row align-items-center">
-  <div class="field col-sm-3 my-1">
-    <%= form.text_field :name, placeholder: 'Name'%>
+  <div class="d-flex flex-column">
+  <div class="col form-group mb-3">
+    <%= form.text_field :name, placeholder: 'Name', class: 'form-control'%>
   </div>
 
-  <div class="field col-sm-3 my-1">
-    <%= form.text_field :phonenumber, placeholder: 'Phonecontact' %>
+  <div class="col form-group mb-3">
+    <%= form.text_field :phonenumber, placeholder: 'Phone contact', class: 'form-control' %>
   </div>
 
-  <div class="field col-sm-3 my-1">
-    <%= form.number_field :amount, placeholder: 'Amount' %>
+  <div class="col form-group mb-3">
+    <%= form.number_field :amount, placeholder: 'Amount', class: 'form-control' %>
   </div>
 
-  <div class="field col-sm-">
-    <%= form.label :expecteddate %>
-    <%= form.date_select :expecteddate %>
+  <div class="co form-group mb-3">
+    <p class="text-light">Expected Date</p>
+    <%= form.date_field :expecteddate ,class:'form-control', placeholder:'Cell Number', :required => true%>
   </div>
 
-  <div class="actions col-sm-3 my-1">
-    <%= form.submit 'Pledge' %>
+  <div class="actions co">
+    <%= form.submit 'Add Pledge', class: 'btn btn-primary' %>
   </div>
   </div>
 <% end %>
