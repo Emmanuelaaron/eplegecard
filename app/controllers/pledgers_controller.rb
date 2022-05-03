@@ -4,6 +4,11 @@ class PledgersController < ApplicationController
   # GET /pledgers or /pledgers.json
   def index
     @pledgers = Pledger.all
+
+    respond_to do |format|
+      format.html
+      format.xlsx
+    end
   end
 
   # GET /pledgers/1 or /pledgers/1.json
@@ -22,7 +27,7 @@ class PledgersController < ApplicationController
     @pledger = Pledger.new(pledger_params)
     respond_to do |format|
       if @pledger.save
-        format.html { redirect_to pledger_url(@pledger), notice: 'Pledger was successfully created.' }
+        format.html { redirect_to new_pledger_path, notice: 'Pledge was successfully submitted.' }
         format.json { render :show, status: :created, location: @pledger }
       else
         format.html { render :new, status: :unprocessable_entity }

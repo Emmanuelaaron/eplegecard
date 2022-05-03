@@ -1,36 +1,35 @@
-<p id="notice"><%= notice %></p>
-<div class="d-flex align-items-center justify-content-around">
-  <%= render 'sidebar'%>
-
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Phonenumber</th>
-        <th>Amount</th>
-        <th>Expecteddate</th>
-        <th>Fullfilled</th>
-        <th colspan="3"></th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <% @pledgers.each do |pledger| %>
-        <tr>
-          <td><%= pledger.name %></td>
-          <td><%= pledger.phonenumber %></td>
-          <td><%= pledger.amount %></td>
-          <td><%= pledger.expecteddate %></td>
-          <td><%= pledger.fullfilled %></td>
-          <td><%= link_to 'Show', pledger %></td>
-          <td><%= link_to 'Edit', edit_pledger_path(pledger) %></td>
-          <td><%= link_to 'Destroy', pledger, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-  </div>
-<br>
-
-<%= link_to 'New Pledger', new_pledger_path %>
+<div class="row d-flex flex-column align-items-center pledge-table">
+<div class="col-md-10 my-table pt-4 pb-4">
+<div class="text-light">
+          <h2>PLEDGES</h2>
 </div>
+
+<table class="table table-stripe text-center border mt-5">
+  <h5><u><em><%= link_to 'Download as Excel',
+  pledgers_path(format: :xlsx),
+  class: 'text-light'
+  %></u></em></h5>
+
+  <thead>
+    <tr class="text-light">
+      <th scope="col">Name</th>
+      <th scope="col">Contact</th>
+      <th scope="col">Amount</th>
+      <th scope="col">Due Date</th>
+      
+    </tr>
+  </thead>
+  <%@pledgers.each do |member|%>
+  <tbody class="text-secondary">
+    <tr>
+      <td class="text-light"><%=member.name%></td>
+      <td class="text-light"><%=member.phonenumber%></td>
+      <td class="text-light"><%=member.amount%></td>
+      <td class="text-light"><%=member.expecteddate%></th>
+    </tr>
+  </tbody>
+  <%end%>
+  <%= link_to 'Add Pledge', new_pledger_path, class: 'text-light'%>
+</table>
+</div>
+</div

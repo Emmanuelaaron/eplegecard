@@ -1,0 +1,9 @@
+wb = xlsx_package.workbook 
+
+wb.add_worksheet(name: 'Item') do |sheet|
+   sheet.add_row %w(Name Contact Amount DueDate)
+
+   @pledgers.each do |pledger| 
+     sheet.add_row [pledger.name, pledger.phonenumber, pledger.amount, pledger.expecteddate]
+   end
+end

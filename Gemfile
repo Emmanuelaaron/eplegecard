@@ -13,9 +13,11 @@ gem 'jquery-rails'
 gem 'figaro'
 gem 'puma', '~> 5.0'
 gem 'rubocop', '>= 1.0', '< 2.0'
-gem 'vonage', '~> 7.5'
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'
+gem 'axlsx', git: 'https://github.com/randym/axlsx.git', ref: 'c8ac844'
+gem 'axlsx_rails'
+gem 'rubyzip', '>= 1.2.1'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
 gem 'webpacker', '~> 5.0'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
