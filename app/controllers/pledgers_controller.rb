@@ -27,10 +27,10 @@ class PledgersController < ApplicationController
     @pledger = Pledger.new(pledger_params)
     respond_to do |format|
       if @pledger.save
-        format.html { redirect_to new_pledger_path, notice: 'Pledge was successfully submitted.' }
+        format.html { redirect_to root_path, notice: 'Pledge successfully submitted.' }
         format.json { render :show, status: :created, location: @pledger }
       else
-        format.html { render :new, status: :unprocessable_entity }
+        format.html { render :new }
         format.json { render json: @pledger.errors, status: :unprocessable_entity }
       end
     end

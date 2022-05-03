@@ -1,4 +1,24 @@
 <%= form_with(model: pledger) do |form| %>
+  <div class="reception-details">
+      <h5>Church: St. Stephen C.O.U Munyonyo</h5>
+      <p>Time: 12:00pm</p>
+      <h5>Reception: Speke Resort Munyonyo</h5>
+      <p>Time: 2.00pm</p>
+  </div>
+  <hr class="bg-light">
+  <div class="text-success">
+    <h5>Your Generous Contribution is welcome</h5>
+    <h6><u>Mobile Money</u></h6>
+    <p>MTN: +256783708676 -Joel Kanye</p>
+    <p>Airtel : +256758326378 -Slivia Kabakanye</p>
+    <h6><u>Direct Bank Transfer(DFCU)</u></h6>
+    <p>Account No: 01191154072175</p>
+    <p>Branch: Entebbe Road </p>
+    <p>Swift code: DFCUUGKA</p>
+  </div>
+  <hr class="bg-light">
+  <h4 class="text-light">For Pledges use the form below</h4>
+  <p class="alert text-success"><%= notice %></p>
   <% if pledger.errors.any? %>
     <div id="error_explanation">
       <ul class="text-danger">
@@ -8,7 +28,6 @@
       </ul>
     </div>
   <% end %>
-  <h4 class="text-light">Please Add your Pledge details here</h4>
   <div>
   <div class="d-flex flex-column">
   <div class="col form-group mb-3">
@@ -29,7 +48,7 @@
   </div>
 
   <div class="actions co">
-    <%= form.submit 'Add Pledge', class: 'btn btn-primary' %>
+    <%= form.submit 'Add Pledge', class: 'btn btn-primary mb-5' %>
   </div>
   </div>
 <% end %>
