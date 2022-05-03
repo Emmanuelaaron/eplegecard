@@ -81,6 +81,4 @@ test:
 #
 production:
   <<: *default
-  database: epledgecard_production
-  username: epledgecard_api
-  password: <%= ENV['EPLEDGECARD_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
